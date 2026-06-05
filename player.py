@@ -11,13 +11,14 @@ class Player:
         self.max_energy = 3
 
         self.draw_pile = [
-            Card("Strike", 1, damage=1000),
-            Card("Strike", 1, damage=1000),
-            Card("Strike", 1, damage=1000),
+            Card("Strike", 1, damage=5),
+            Card("Strike", 1, damage=5),
+            Card("Strike", 1, damage=5),
             Card("Defend", 1, block=5),
             Card("Defend", 1, block=5),
             Card("Heavy Hit", 2, damage=14),
             Card("Guard", 2, block=12),
+            Card("Cheat", 0, damage=1000),
         ]
 
         self.hand = []
