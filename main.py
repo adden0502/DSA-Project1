@@ -41,9 +41,11 @@ leaderboard_rect = pygame.Rect(390, 370, 220, 55)
 quit_rect = pygame.Rect(390, 440, 220, 55)
 continue_rect = pygame.Rect(395, 430, 210, 55)
 back_rect = pygame.Rect(390, 610, 220, 45)
+skip_reward_rect = pygame.Rect(390, 580, 220, 45)
 items_button_rect = pygame.Rect(835, 25, 130, 38)
 close_items_rect = pygame.Rect(745, 95, 35, 35)
 show_items_panel = False
+inventory_scroll = 0
 
 
 def draw_text(text, x, y, used_font=None, color=(235, 235, 235)):
@@ -70,7 +72,7 @@ def draw_button(rect, text, color=(70, 80, 120)):
 def reset_run():
     global dungeon_map, battle, score_manager, player_hp, player_max_hp, inventory
     global current_room_type, current_battle_is_boss, battle_turns, battle_enemy_count
-    global current_enemy_types, treasure_choices, event_options, reward_title, show_items_panel
+    global current_enemy_types, treasure_choices, event_options, reward_title, show_items_panel, inventory_scroll
 
     dungeon_map = DungeonMap()
     battle = None
@@ -88,6 +90,8 @@ def reset_run():
     event_options = []
     reward_title = ""
     show_items_panel = False
+    inventory_scroll = 0
+inventory_scroll = 0
 
 
 def apply_item_immediate_effect(item_name):
@@ -110,11 +114,21 @@ def apply_inventory_to_battle(battle):
     if battle is None:
         return
 
+    # Prevent repeated relic application from stacking every frame.
+    # Item effects should be applied once when a battle starts.
+    if getattr(battle, "inventory_applied", False):
+        return
+
+    battle.inventory_applied = True
+
     battle.player.max_hp = player_max_hp
     battle.player.hp = min(player_hp, player_max_hp)
 
+    if not hasattr(battle.player, "base_max_energy"):
+        battle.player.base_max_energy = battle.player.max_energy
+
     energy_bonus = inventory.total_effect("max_energy")
-    battle.player.max_energy += energy_bonus
+    battle.player.max_energy = battle.player.base_max_energy + energy_bonus
     battle.player.energy = battle.player.max_energy
 
     battle.player.block += inventory.total_effect("start_block")
@@ -331,9 +345,14 @@ def draw_inventory_panel():
         draw_text("No items yet", panel.x + 30, panel.y + 105, font, (210, 210, 220))
         return
 
+    visible_count = 6
+    max_scroll = max(0, len(inventory.items) - visible_count)
+    scroll = max(0, min(inventory_scroll, max_scroll))
+    visible_items = inventory.items[scroll:scroll + visible_count]
+
     y = panel.y + 100
 
-    for item_name in inventory.items[-12:]:
+    for item_name in visible_items:
         info = ITEMS[item_name]
         rarity = info["rarity"]
         desc = info["desc"]
@@ -351,22 +370,57 @@ def draw_inventory_panel():
 
         draw_text(item_name, panel.x + 30, y, font, (255, 255, 255))
         draw_text(f"[{rarity}]", panel.x + 250, y + 2, small_font, rarity_color)
-        draw_text(desc[:58], panel.x + 30, y + 28, small_font, (210, 210, 220))
+
+        words = desc.split()
+        line = ""
+        line_y = y + 28
+
+        for word in words:
+            if len(line + " " + word) > 48:
+                draw_text(line, panel.x + 30, line_y, small_font, (210, 210, 220))
+                line_y += 22
+                line = word
+            else:
+                line = (line + " " + word).strip()
+
+        if line:
+            draw_text(line, panel.x + 30, line_y, small_font, (210, 210, 220))
 
         y += 65
 
-        if y > panel.y + panel.height - 55:
-            draw_text("Only recent 12 items shown", panel.x + 30, y, small_font, (170, 170, 185))
-            break
+    if len(inventory.items) > visible_count:
+        bar_x = panel.right - 24
+        bar_y = panel.y + 95
+        bar_h = 390
+        handle_h = max(45, int(bar_h * visible_count / len(inventory.items)))
+
+        pygame.draw.rect(screen, (65, 65, 85), (bar_x, bar_y, 8, bar_h), border_radius=4)
+
+        if max_scroll > 0:
+            handle_y = bar_y + int((bar_h - handle_h) * scroll / max_scroll)
+        else:
+            handle_y = bar_y
+
+        pygame.draw.rect(screen, (220, 220, 240), (bar_x, handle_y, 8, handle_h), border_radius=4)
+
+        draw_text(
+            f"{scroll + 1}-{min(scroll + visible_count, len(inventory.items))} / {len(inventory.items)}",
+            panel.x + 30,
+            panel.bottom - 35,
+            small_font,
+            (180, 180, 200)
+        )
 
 
 def draw_reward_screen():
     draw_centered(reward_title, 60, big_font)
 
     if reward_title == "Treasure":
-        draw_centered("Choose one item", 120, small_font, (200, 200, 220))
+        draw_centered("Choose one item or skip", 120, small_font, (200, 200, 220))
+    elif reward_title == "Boss Reward":
+        draw_centered("Choose boss reward or skip", 120, small_font, (200, 200, 220))
     else:
-        draw_centered("Choose one event result", 120, small_font, (200, 200, 220))
+        draw_centered("Choose one event result or skip", 120, small_font, (200, 200, 220))
 
     for i, item_name in enumerate(treasure_choices):
         rect = pygame.Rect(180 + i * 210, 210, 190, 260)
@@ -395,7 +449,9 @@ def draw_reward_screen():
             draw_text(line, rect.x + 15, y, small_font, (220, 220, 220))
 
     if not treasure_choices:
-        draw_centered("No reward available", 300, font, (200, 200, 210))
+        draw_centered("No more available items", 300, font, (200, 200, 210))
+
+    draw_button(skip_reward_rect, "Skip", (90, 90, 110))
 
 
 def draw_event_screen():
@@ -533,6 +589,18 @@ def complete_current_map_node():
         score_manager.reach_floor(dungeon_map.floor)
 
 
+def skip_reward():
+    global scene
+
+    if reward_title in ["Treasure", "Boss Reward"]:
+        dungeon_map.message = "Skipped reward"
+        complete_current_map_node()
+        scene = "map"
+    else:
+        dungeon_map.message = "Skipped reward"
+        scene = "map"
+
+
 def resolve_non_battle_room(room_type):
     global player_hp
 
@@ -594,6 +662,11 @@ while running:
         elif scene == "reward":
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
+
+                if skip_reward_rect.collidepoint(mouse_pos):
+                    skip_reward()
+                    continue
+
                 for i, item_name in enumerate(treasure_choices):
                     rect = pygame.Rect(180 + i * 210, 210, 190, 260)
                     if rect.collidepoint(mouse_pos):
@@ -622,16 +695,28 @@ while running:
                         break
 
         elif scene == "map":
+            if show_items_panel and event.type == pygame.MOUSEWHEEL:
+                max_scroll = max(0, len(inventory.items) - 6)
+
+                if event.y > 0:
+                    inventory_scroll = max(0, inventory_scroll - 1)
+                elif event.y < 0:
+                    inventory_scroll = min(max_scroll, inventory_scroll + 1)
+
+                continue
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
 
                 if show_items_panel:
                     if close_items_rect.collidepoint(mouse_pos):
                         show_items_panel = False
+                        inventory_scroll = 0
                     continue
 
                 if items_button_rect.collidepoint(mouse_pos):
                     show_items_panel = True
+                    inventory_scroll = 0
                     continue
 
             if show_items_panel:
