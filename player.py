@@ -1,6 +1,7 @@
 import random
 from card import Card
 
+
 class Player:
     def __init__(self):
         self.max_hp = 80
@@ -10,9 +11,9 @@ class Player:
         self.max_energy = 3
 
         self.draw_pile = [
-            Card("Strike", 1, damage=6),
-            Card("Strike", 1, damage=6),
-            Card("Strike", 1, damage=6),
+            Card("Strike", 1, damage=1000),
+            Card("Strike", 1, damage=1000),
+            Card("Strike", 1, damage=1000),
             Card("Defend", 1, block=5),
             Card("Defend", 1, block=5),
             Card("Heavy Hit", 2, damage=14),

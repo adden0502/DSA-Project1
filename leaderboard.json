@@ -1,0 +1,898 @@
+[
+    {
+        "name": "Player",
+        "score": 5560,
+        "floor": 2,
+        "rooms": 11,
+        "monsters": 5,
+        "bosses": 1,
+        "turns": 8,
+        "undos": 3,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 180
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 160
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 260
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 340
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 440
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 490
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 580
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 980
+            },
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 1080
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 1160
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 1260
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 1310
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 1400
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 1800
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 1900
+            },
+            {
+                "reason": "Defeated boss",
+                "amount": 500,
+                "total": 2400
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 2490
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 2890
+            },
+            {
+                "reason": "Reached floor 2",
+                "amount": 500,
+                "total": 3390
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 3490
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 3540
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 3630
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 4030
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": 4000
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": 3970
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 4070
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 4120
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 4210
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 4610
+            },
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 4710
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 4790
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": 4760
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 4860
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 4910
+            },
+            {
+                "reason": "Turn bonus: cleared in 3 turn(s)",
+                "amount": 70,
+                "total": 4980
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 5380
+            },
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 5480
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 5560
+            }
+        ]
+    },
+    {
+        "name": "test",
+        "score": 5190,
+        "floor": 2,
+        "rooms": 11,
+        "monsters": 4,
+        "bosses": 1,
+        "turns": 5,
+        "undos": 0,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 150
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 240
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 640
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 740
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 790
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 880
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 1280
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 1380
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 1430
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 1520
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 1920
+            },
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 2020
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 2100
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 2080
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 2180
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 2260
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 2360
+            },
+            {
+                "reason": "Defeated boss",
+                "amount": 500,
+                "total": 2860
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 2950
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 3350
+            },
+            {
+                "reason": "Reached floor 2",
+                "amount": 500,
+                "total": 3850
+            },
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 3950
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 4030
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 4130
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 4210
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 4310
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 4360
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 4450
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 4850
+            },
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 4950
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 5030
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 5010
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 5110
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 5190
+            }
+        ]
+    },
+    {
+        "name": "test11111",
+        "score": 5175,
+        "floor": 2,
+        "rooms": 11,
+        "monsters": 4,
+        "bosses": 1,
+        "turns": 5,
+        "undos": 0,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 150
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 240
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 640
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 740
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 820
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 920
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 1000
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 1100
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 1180
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 1280
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 1360
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 1460
+            },
+            {
+                "reason": "Defeated boss",
+                "amount": 500,
+                "total": 1960
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 2050
+            },
+            {
+                "reason": "Remaining HP bonus: 50 HP",
+                "amount": 250,
+                "total": 2300
+            },
+            {
+                "reason": "Reached floor 2",
+                "amount": 500,
+                "total": 2800
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 2900
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 2950
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 3040
+            },
+            {
+                "reason": "Remaining HP bonus: 90 HP",
+                "amount": 450,
+                "total": 3490
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 3590
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 3670
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 3770
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 3820
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 3910
+            },
+            {
+                "reason": "Remaining HP bonus: 83 HP",
+                "amount": 415,
+                "total": 4325
+            },
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 4425
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 4505
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 4485
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 4585
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 4635
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 4725
+            },
+            {
+                "reason": "Remaining HP bonus: 90 HP",
+                "amount": 450,
+                "total": 5175
+            }
+        ]
+    },
+    {
+        "name": "Player",
+        "score": 2740,
+        "floor": 1,
+        "rooms": 5,
+        "monsters": 4,
+        "bosses": 0,
+        "turns": 4,
+        "undos": 0,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 180
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 280
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 330
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 420
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 820
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 920
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 970
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 1060
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 1460
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 1560
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 1610
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 1700
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 2100
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 2200
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 2250
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 2340
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 2740
+            }
+        ]
+    },
+    {
+        "name": "Player",
+        "score": 1320,
+        "floor": 1,
+        "rooms": 5,
+        "monsters": 1,
+        "bosses": 0,
+        "turns": 1,
+        "undos": 0,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared TREASURE room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Visited special room: TREASURE",
+                "amount": 80,
+                "total": 180
+            },
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 280
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 360
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 340
+            },
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 440
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 490
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 580
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 980
+            },
+            {
+                "reason": "Cleared EVENT room",
+                "amount": 100,
+                "total": 1080
+            },
+            {
+                "reason": "Visited special room: EVENT",
+                "amount": 80,
+                "total": 1160
+            },
+            {
+                "reason": "Cleared REST room",
+                "amount": 100,
+                "total": 1260
+            },
+            {
+                "reason": "Visited special room: REST",
+                "amount": 80,
+                "total": 1340
+            },
+            {
+                "reason": "Used rest room",
+                "amount": -20,
+                "total": 1320
+            }
+        ]
+    },
+    {
+        "name": "add",
+        "score": 610,
+        "floor": 1,
+        "rooms": 1,
+        "monsters": 1,
+        "bosses": 0,
+        "turns": 1,
+        "undos": 1,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Cleared battle room",
+                "amount": 100,
+                "total": 100
+            },
+            {
+                "reason": "Defeated 1 monster(s)",
+                "amount": 50,
+                "total": 150
+            },
+            {
+                "reason": "Turn bonus: cleared in 1 turn(s)",
+                "amount": 90,
+                "total": 240
+            },
+            {
+                "reason": "Remaining HP bonus: 80 HP",
+                "amount": 400,
+                "total": 640
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": 610
+            }
+        ]
+    },
+    {
+        "name": "add",
+        "score": 0,
+        "floor": 1,
+        "rooms": 0,
+        "monsters": 0,
+        "bosses": 0,
+        "turns": 0,
+        "undos": 0,
+        "defeated": true,
+        "log": []
+    },
+    {
+        "name": "Player",
+        "score": -30,
+        "floor": 1,
+        "rooms": 0,
+        "monsters": 0,
+        "bosses": 0,
+        "turns": 0,
+        "undos": 1,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -30
+            }
+        ]
+    },
+    {
+        "name": "Player",
+        "score": -300,
+        "floor": 1,
+        "rooms": 0,
+        "monsters": 0,
+        "bosses": 0,
+        "turns": 0,
+        "undos": 10,
+        "defeated": true,
+        "log": [
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -30
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -60
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -90
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -120
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -150
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -180
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -210
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -240
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -270
+            },
+            {
+                "reason": "Used undo",
+                "amount": -30,
+                "total": -300
+            }
+        ]
+    }
+]
